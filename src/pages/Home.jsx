@@ -1,13 +1,9 @@
-import HeroSection from "../components/Herosection";
-import TopRecommendations from "../components/TopRecommendations";
-import MapSection from "../components/MapSection";
+import HeroSection from "../components/hero/HeroSection";
 
 export default function Home() {
   return (
-    <div>
+    <>
       <HeroSection />
-      <TopRecommendations />
-      <MapSection />
-    </div>
+    </>
   );
 }

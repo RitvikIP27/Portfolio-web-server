@@ -1,0 +1,291 @@
+/* ===============================
+   HERO SECTION BASE
+================================ */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8%;
+  background: radial-gradient(
+      circle at 20% 20%,
+      rgba(255, 122, 24, 0.15),
+      transparent 40%
+    ),
+    #0a0a0a;
+  color: white;
+  
+}
+
+/* Main glass panel */
+.hero-content {
+  position: relative;
+  max-width: 2900px;
+  min-height:450px;
+  width: 100%;
+  padding: 90px 90px 50px 90px;
+  border-radius: 28px;
+
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,122,24,0.18);
+
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.hero-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  padding: 1px;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,122,24,0.35),
+    transparent
+  );
+
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Top layout (text + image) */
+.hero-main {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255,122,24,0.18), transparent 60%);
+  filter: blur(60px);
+  pointer-events: none;
+  transition: transform 0.15s ease;
+}
+
+/* ===============================
+   LEFT CONTENT
+================================ */
+
+.left h1 {
+  font-size: 64px;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.accent {
+  color: #ff7a18;
+}
+
+.left p {
+  margin-top: 24px;
+  color: #b3b3b3;
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 520px;
+}
+
+/* ===============================
+   BUTTONS
+================================ */
+
+.buttons {
+  margin-top: 32px;
+  display: flex;
+  gap: 16px;
+}
+
+.primary {
+  background: #ff7a18;
+  color: white;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.25s ease;
+}
+
+.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 122, 24, 0.35);
+}
+
+.secondary {
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 14px 24px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.secondary:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+/* ===============================
+   SKILLS BADGES
+================================ */
+
+.skills {
+  margin-top: 38px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.skill {
+  padding: 10px 16px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,122,24,0.3);
+  font-size: 14px;
+  transition: 0.25s ease;
+}
+
+.skill:hover {
+  transform: translateY(-3px);
+  background: rgba(255,122,24,0.15);
+  border-color: #ff7a18;
+}
+
+/* ===============================
+   RIGHT IMAGE
+================================ */
+
+.visual {
+  display: flex;
+  justify-content: center;
+}
+
+.visual img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 20px;
+  opacity: 0.95;
+}
+
+/* ===============================
+   FLOATING MINI STATS
+================================ */
+
+.stat {
+  position: absolute;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: rgba(20,20,20,0.75);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,122,24,0.4);
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  animation: float 7s ease-in-out infinite;
+}
+
+.stat strong {
+  font-size: 18px;
+  color: #ff7a18;
+}
+
+.stat span {
+  color: #cfcfcf;
+  font-size: 12px;
+}
+
+.stat-uptime {
+  top: 40px;
+  right: 420px;
+}
+
+.stat-secure {
+  right: 40px;
+  top: 45%;
+}
+
+.stat-projects {
+  bottom: 40px;
+  right: 120px;
+}
+
+/* floating animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+/* ===============================
+   BOTTOM STATS BAR
+================================ */
+
+.stats-bar {
+  padding: 32px 20px;
+  border-radius: 18px;
+  background: rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,122,24,0.18);
+  box-shadow: inset 0 0 0 1px rgba(255,122,24,0.05);
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  text-align: center;
+}
+
+.stat-item h3 {
+  color: #ff7a18;
+  font-size: 30px;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.stat-item p {
+  color: #a0a0a0;
+  font-size: 13px;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 900px) {
+
+  .hero-main {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+
+  .skills {
+    justify-content: center;
+  }
+
+  .stats-bar {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .stat-uptime,
+  .stat-secure {
+    display: none;
+  }
+}
