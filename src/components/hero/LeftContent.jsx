@@ -11,7 +11,7 @@ export default function LeftContent() {
       </p>
 
       <div className="buttons">
-        <button className="primary">VMy Works</button>
+        <button className="primary">My Works</button>
         <button className="secondary">Download CV</button>
       </div>
 
