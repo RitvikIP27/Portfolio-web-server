@@ -1,9 +1,26 @@
 /* RESET */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+/* GLOBAL BACKGROUND FOR ENTIRE SITE */
+html, body {
+  margin: 0;
+  padding: 0;
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(255, 122, 24, 0.15),
+      transparent 40%
+    ),
+    #0a0a0a;
+
+  color: white;
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   background-color: #000;  /* Same as hero */
@@ -11,61 +28,62 @@ body {
 }
 
 
-/* FLOAT ANIMATION */
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
+//* Wrapper */
 .radar-wrapper {
   position: relative;
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
 }
 
-/* Smaller center dot */
+/* Center dot (small, sharp) */
 .radar-dot {
-  width: 10px;
-  height: 10px;
-  background: #ff7a18;
-  box-shadow: 0 0 10px #ff7a18;
-  border-radius: 50%;
   position: absolute;
-  top: 6px;
-  left: 6px;
-  z-index: 2;
-  box-shadow: 0 0 8px #ff3b3b;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background: #ff3b3b;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  box-shadow: 0 0 8px #ff3b3b, 0 0 16px rgba(255, 59, 59, 0.6);
 }
 
-/* Bigger sonar wave */
+/* Big bold sonar wave */
 .radar-pulse {
   position: absolute;
-  width: 16px;
-  height: 16px;
+  top: 50%;
+  left: 50%;
+  width: 200px;     /* BIG */
+  height: 200px;    /* BIG */
   border-radius: 50%;
-  background: rgba(255, 59, 59, 0.4);
-  animation: radar 1s infinite;
+  background: radial-gradient(
+    circle,
+    rgba(255, 59, 59, 0.6) 0%,
+    rgba(255, 59, 59, 0.35) 30%,
+    rgba(255, 59, 59, 0.15) 60%,
+    transparent 75%
+  );
+  transform: translate(-50%, -50%) scale(0.3);
+  animation: radar 2.5s ease-out infinite;
+  z-index: 1;
 }
 
-/* Bigger expansion */
+/* Animation */
 @keyframes radar {
   0% {
-    transform: scale(1);
-    opacity: 0.7;
+    transform: translate(-50%, -50%) scale(0.3);
+    opacity: 1;
   }
   70% {
-    transform: scale(5);  /* was 3 before */
-    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.8);
+    opacity: 0.4;
   }
   100% {
-    transform: scale(5);
+    transform: translate(-50%, -50%) scale(2.5);
     opacity: 0;
   }
 }
-
 
 
 /* TAILWIND IMPORTS */

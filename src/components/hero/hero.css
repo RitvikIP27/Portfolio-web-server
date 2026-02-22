@@ -9,15 +9,9 @@
   align-items: center;
   justify-content: center;
   padding: 0 8%;
-  background: radial-gradient(
-      circle at 20% 20%,
-      rgba(255, 122, 24, 0.15),
-      transparent 40%
-    ),
-    #0a0a0a;
   color: white;
-  
 }
+
 
 /* Main glass panel */
 .hero-content {
